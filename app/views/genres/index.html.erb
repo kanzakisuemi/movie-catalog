@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col"></div>
+  <div class="col">
+    <%= image_tag "theater-masks", size: "100", class: "rounded mx-auto d-block mb-3" %>
+    <div id="colaboradores">
+      <div class="list-group">
+        <% @genres.each do |genre| %>
+          <%= link_to "#{genre.name}", genre, class: "list-group-item list-group-item-action border-dark" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= link_to "Add new Genre", new_genre_path, class: "btn btn-secondary mt-3" %>
+    </div>
+  </div>
+  <div class="col"></div>
+</div>

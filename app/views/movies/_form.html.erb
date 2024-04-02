@@ -1,0 +1,46 @@
+<%= form_with(model: movie) do |form| %>
+  <div class="mb-3 form-floating">
+    <%= form.text_field :title, class: "form-control", placeholder: "" %>
+    <%= form.label :title %>
+  </div>
+
+  <div class="mb-3 form-floating">
+    <%= form.date_field :release_date, class: "form-control" %>
+    <%= form.label :release_date %>
+  </div>
+
+  <div class="mb-3 form-floating">
+    <%= form.text_area :synopsis, class: "form-control", placeholder: "" %>
+    <%= form.label :synopsis %>
+  </div>
+
+  <div class="mb-3 form-floating">
+    <%= form.text_field :origin_country, class: "form-control", placeholder: "" %>
+    <%= form.label :origin_country, "Where is this movie from?" %>
+  </div>
+
+  <div class="mb-3 form-floating">
+    <%= form.text_field :movie_time, class: "form-control", placeholder: "", minlength: 2, maxlength: 3 %>
+    <%= form.label :movie_time, "Movie duration in minutes"%>
+  </div>
+
+  <div class="mb-3 form-floating">
+    <%= form.collection_select :director_id, Director.all, :id, :name, { prompt: "If the movie director is not listed, register the director before!" }, { class: "form-select" } %>
+    <%= form.label :director_id %>
+  </div>
+
+  <div class="dropdown mb-3">
+    <a class="dropdown-toggle form-select" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Genres </a>
+    <div class="dropdown-menu"> 
+      <%= form.collection_check_boxes :genre_ids, Genre.all, :id, :name, { multiple: true }, { class: "form-check-input" } do |b| %>
+        <div class="form-check">
+          <%= b.check_box %>
+          <%= b.label class: "form-check-label" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%= form.submit "Save", class: "btn btn-secondary" %>
+
+<% end %>

@@ -1,0 +1,39 @@
+<div id="<%= dom_id movie %>">
+  <div class="d-flex justify-content-between">
+    <span class="bold">Title:</span>
+    <span > <%= movie.title.capitalize %> </span>
+  </div>
+  <hr class="divider"/>
+
+  <div class="d-flex justify-content-between">
+    <span class="bold">Synopsis:</span>
+    <span> <%= movie.synopsis %> </span>
+  </div>
+  <hr class="divider"/>
+
+  <div class="d-flex justify-content-between">
+    <span class="bold">Release Date:</span>
+    <span> <%= movie.release_date ? movie.release_date.strftime('%d/%m/%Y') : "--"%> </span>
+  </div>
+  <hr class="divider"/>
+
+  <div class="d-flex justify-content-between">
+    <span class="bold">Directed by:</span>
+    <% if movie.director %>
+      <%= link_to movie.director.name, director_path(movie.director) %>
+    <% else %>
+      <span> -- </span>
+    <% end %>
+  </div>
+  <hr class="divider"/>
+
+  <div class="d-flex justify-content-between">
+    <span class="bold">Genres:</span>
+    <span>
+      <% movie.genres.each do |genre| %>
+        <%= genre.name %>
+        <% unless genre == movie.genres.last %>, <% end %>
+      <% end %>
+    </span>
+  </div>
+</div>

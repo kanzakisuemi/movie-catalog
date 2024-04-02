@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col"></div>
+  <div class="col">
+    <%= image_tag "movie-track", size: "100", class: "rounded mx-auto d-block mb-3" %>
+    <div id="movies">
+      <div class="list-group">
+        <% @movies.each do |movie| %>
+          <% movie.release_date ? year = movie.release_date.strftime('%Y') : "" %>
+          <%= link_to movie, class: "list-group-item list-group-item-action border-dark d-flex justify-content-between" do %>
+            <%= content_tag(:span, movie.title) %>
+            <%= content_tag(:span, year) %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= link_to "Add new movie", new_movie_path, class: "btn btn-secondary mt-3" %>
+    </div>
+  </div>
+  <div class="col"></div>
+</div>

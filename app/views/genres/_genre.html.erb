@@ -1,0 +1,10 @@
+<div id="<%= dom_id genre %>">
+  <h5 class="card-title"><%= genre.name %></h5>
+  <% genre.movies.any? do %>
+    <div class="list-group">
+      <% genre.movies.each do |movie| %>
+        <%= link_to "#{movie.title}", movie, class: "list-group-item list-group-item-action border-dark" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

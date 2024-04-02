@@ -1,0 +1,13 @@
+<div class="card border-dark mx-auto" style="max-width: 30rem; background-color: white;">
+  <div class="card-body">  
+    <%= render @director %>
+
+    <hr class="divider" />
+
+    <div class="d-flex justify-content-center">
+      <%= link_to "Voltar", directors_path, class: "btn btn-secondary d-inline mx-2" %>
+      <%= link_to "Editar", edit_director_path(@director), class: "btn btn-secondary d-inline mx-2" %>
+      <%= button_to "Deletar", @director, method: :delete, class: "btn btn-secondary d-inline mx-2" %>
+    </div>
+  </div>
+</div>
