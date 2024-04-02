@@ -1,24 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Projeto para o TreinaDev 12
+Catálogo de Filmes com:
+Cadastro de Filmes, Generos e Diretores
+Usei:
+Para CSS - Sass e Bootstrap
+Para JS - Esbuild e Bootstrap
