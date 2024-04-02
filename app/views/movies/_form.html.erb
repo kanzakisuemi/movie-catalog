@@ -30,10 +30,10 @@
   </div>
 
   <div class="dropdown mb-3">
-    <a class="dropdown-toggle form-select" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Genres </a>
+    <a class="form-select" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Genres </a>
     <div class="dropdown-menu"> 
       <%= form.collection_check_boxes :genre_ids, Genre.all, :id, :name, { multiple: true }, { class: "form-check-input" } do |b| %>
-        <div class="form-check">
+        <div class="form-check ms-4">
           <%= b.check_box %>
           <%= b.label class: "form-check-label" %>
         </div>
@@ -41,6 +41,9 @@
     </div>
   </div>
 
-  <%= form.submit "Save", class: "btn btn-secondary" %>
+  <div class="d-flex justify-content-center">
+    <%= link_to "Back", movies_path, class: "btn btn-secondary d-inline mx-2" %>
+    <%= form.submit "Save", class: "btn btn-secondary" %>
+  </div>
 
 <% end %>

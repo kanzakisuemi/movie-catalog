@@ -15,7 +15,6 @@
     <%= form.collection_select :genre_id, Genre.all, :id, :name, { prompt: "" }, { class: "form-select" } %>
     <%= form.label :genre_id %>
   </div>
-
   <div class="d-flex justify-content-center">
     <%= link_to "Back", directors_path, class: "btn btn-secondary d-inline mx-2" %>
     <%= form.submit "Save", class: "btn btn-secondary" %>
